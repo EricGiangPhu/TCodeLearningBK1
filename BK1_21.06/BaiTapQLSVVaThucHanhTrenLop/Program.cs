@@ -31,7 +31,7 @@ namespace TCODELearning {
             } while (true);
         }
 
-        public static void ResetArrayInt (ref int[] array, int defaultInt = -1) {
+        public static void ResetArrayInt (int[] array, int defaultInt = -1) {
             for (int i = 0; i < array.Length; i++) {
                 array[i] = defaultInt;
             }
@@ -47,7 +47,7 @@ namespace TCODELearning {
             thongtin = new string[n];
         }
 
-        public static void InsertDataForSV (ref string[] mssv, ref string[] hoten, ref int[] tuoi, ref string[] thongtin) {
+        public static void InsertDataForSV ( string[] mssv,  string[] hoten,  int[] tuoi,  string[] thongtin) {
             System.Console.WriteLine ("================");
             for (int i = 0; i < mssv.Length; i++) {                
                 System.Console.WriteLine ("Nhap thong tin sinh vien {0}", i + 1);
@@ -59,7 +59,7 @@ namespace TCODELearning {
             }
         }
 
-        public static int TimTheoMSSV (string[] mssv, string mssvCanTim, ref int[] result) {
+        public static int TimTheoMSSV (string[] mssv, string mssvCanTim, int[] result) {
             int count = 0;
             for (int i = 0; i < mssv.Length; i++) {
                 // //phan biet viet hoa va viet thuong
@@ -83,7 +83,7 @@ namespace TCODELearning {
             return count;
         }
 
-        static int TimTheoHoTen (string[] hoten, string hotenCanTim, ref int[] result) {
+        static int TimTheoHoTen (string[] hoten, string hotenCanTim, int[] result) {
             int count = 0;
             for (int i = 0; i < hoten.Length; i++) {
                 // //phan biet viet hoa va viet thuong
@@ -111,7 +111,7 @@ namespace TCODELearning {
             return count;
         }
 
-        static int TimTheoHoTenVaMssv (string[] mssv, string[] hoten, string chuoiCanTim, ref int[] result) {
+        static int TimTheoHoTenVaMssv (string[] mssv, string[] hoten, string chuoiCanTim, int[] result) {
             int count = 0;
             for (int i = 0; i < hoten.Length; i++) {
                 if (mssv[i].ToLower ().Contains (chuoiCanTim.ToLower ())) {
@@ -140,7 +140,7 @@ namespace TCODELearning {
             return count;
         }
 
-        public static void TimKiem (string[] mssv, string[] hoten, int[] tuoi, string[] thongtin, ref int[] result) {
+        public static void TimKiem (string[] mssv, string[] hoten, int[] tuoi, string[] thongtin, int[] result) {
             int iSoLuongTimDuoc = -1;
             string strCanTim = "";
 
@@ -159,17 +159,17 @@ namespace TCODELearning {
                 switch (timTheo) {
                     case 1:
                         strCanTim = InputString ("Nhap MSSV can tim: ");
-                        iSoLuongTimDuoc = TimTheoMSSV (mssv, strCanTim, ref result);
+                        iSoLuongTimDuoc = TimTheoMSSV (mssv, strCanTim, result);
                         break;
 
                     case 2:
                         strCanTim = InputString ("Nhap ho ten can tim: ");
-                        iSoLuongTimDuoc = TimTheoHoTen (hoten, strCanTim, ref result);
+                        iSoLuongTimDuoc = TimTheoHoTen (hoten, strCanTim, result);
                         break;
 
                     case 3:
                         strCanTim = InputString ("Nhap mssv hoac ho ten can tim: ");
-                        iSoLuongTimDuoc = TimTheoHoTenVaMssv (mssv, hoten, strCanTim, ref result);
+                        iSoLuongTimDuoc = TimTheoHoTenVaMssv (mssv, hoten, strCanTim, result);
                         break;
 
                     default:
@@ -225,9 +225,8 @@ namespace TCODELearning {
             int[] result = new int[3];
 
             CreateSV (out mssv, out hoten, out tuoi, out thongtin);
-            InsertDataForSV (ref mssv, ref hoten, ref tuoi, ref thongtin);
-            TimKiem (mssv, hoten, tuoi, thongtin, ref result);
-
+            InsertDataForSV ( mssv,  hoten,  tuoi,  thongtin);
+            TimKiem (mssv, hoten, tuoi, thongtin, result);
         }
 
         //========================================//
