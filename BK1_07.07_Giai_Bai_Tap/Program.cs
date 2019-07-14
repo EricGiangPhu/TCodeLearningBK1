@@ -165,19 +165,19 @@ namespace BK1_07._07 {
 
             Vector2D a = new Vector2D (2, 5);
             Vector2D b = new Vector2D (100, 5);
-            System.Console.WriteLine ("A = {0}  B = {1}", a.ConvertToString (), b.ConvertToString ());
+            System.Console.WriteLine ("A = {0}  B = {1}", a.ToString (), b.ToString ());
 
             Vector2D cloneVector = a.Clone ();
-            System.Console.WriteLine ("CloneA = {0}{1}", cloneVector.ConvertToString (), Environment.NewLine);
+            System.Console.WriteLine ("CloneA = {0}{1}", cloneVector.ToString (), Environment.NewLine);
 
             cloneVector.Add (b);
-            System.Console.WriteLine ("CloneA.Add(VectorB) => CloneA = {0}{1}", cloneVector.ConvertToString (), Environment.NewLine);
+            System.Console.WriteLine ("CloneA.Add(VectorB) => CloneA = {0}{1}", cloneVector.ToString (), Environment.NewLine);
 
             cloneVector.Div (b);
-            System.Console.WriteLine ("CloneA.Div(VectorB) => CloneA = {0}{1}", cloneVector.ConvertToString (), Environment.NewLine);
+            System.Console.WriteLine ("CloneA.Div(VectorB) => CloneA = {0}{1}", cloneVector.ToString (), Environment.NewLine);
 
             cloneVector.Swap (b);
-            System.Console.WriteLine ("CloneA.Swap(VectorB) => CloneA = {0}, B = {1}{2}", cloneVector.ConvertToString (), b.ConvertToString (), Environment.NewLine);
+            System.Console.WriteLine ("CloneA.Swap(VectorB) => CloneA = {0}, B = {1}{2}", cloneVector.ToString (), b.ToString (), Environment.NewLine);
 
             float distance = a.Distance (b);
             System.Console.WriteLine ("CloneA.Distance(VectorB) => distance = {0}{1}", distance, Environment.NewLine);
@@ -187,13 +187,13 @@ namespace BK1_07._07 {
             WriteMessageHeader ("Bonus Vector2D");
             Vector2D a = new Vector2D (10, 6);
             Vector2D b = new Vector2D (5, 1);
-            System.Console.WriteLine ("A = {0}  B = {1}", a.ConvertToString (), b.ConvertToString ());
+            System.Console.WriteLine ("A = {0}  B = {1}", a.ToString (), b.ToString ());
 
             Vector2D c1 = a + b;
-            System.Console.WriteLine ("A + B => C = {0}", c1.ConvertToString ());
+            System.Console.WriteLine ("A + B => C = {0}", c1.ToString ());
 
             Vector2D c2 = a - b;
-            System.Console.WriteLine ("A - B => C = {0}", c2.ConvertToString ());
+            System.Console.WriteLine ("A - B => C = {0}", c2.ToString ());
 
         }
 

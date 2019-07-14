@@ -43,7 +43,7 @@ namespace BK1_07._07 {
             return new Vector2D (this.x, this.y);
         }
 
-        public string ConvertToString () {
+        public override string ToString () {
             return "Vector2D(x: " + this.x + ", y: " + this.y + ")";
         }
 
