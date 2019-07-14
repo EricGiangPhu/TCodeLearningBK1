@@ -5,7 +5,7 @@ namespace BK1_23._06 {
         static void Main (string[] args) {
             // showAndCountLowerCharWhenInput()
             // upperCaseFirstCharacterAndAfterSpace ();
-            splitStringWithSeparator ();
+            // splitStringWithSeparator ();
         }
 
         /*==========================//
