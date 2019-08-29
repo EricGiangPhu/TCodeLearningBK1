@@ -185,7 +185,8 @@ namespace BK1_07._07 {
 
         static void bonusVector2D () {
             WriteMessageHeader ("Bonus Vector2D");
-            Vector2D a = new Vector2D (10, 6);
+            Vector2D a = Utils.CreateVector ();
+
             Vector2D b = new Vector2D (5, 1);
             System.Console.WriteLine ("A = {0}  B = {1}", a.ToString (), b.ToString ());
 
@@ -195,6 +196,7 @@ namespace BK1_07._07 {
             Vector2D c2 = a - b;
             System.Console.WriteLine ("A - B => C = {0}", c2.ToString ());
 
+            Enemy enemy = Utils.CreateEnemy (1);
         }
 
         static void WriteMessageHeader (string message) {
@@ -202,12 +204,22 @@ namespace BK1_07._07 {
             System.Console.WriteLine ("// " + message);
             System.Console.WriteLine ("//=============================//");
         }
+
         static void Main (string[] args) {
             // baiTap_1_qlsv ();
 
             // baiTap_2_vector ();
 
-            bonusVector2D ();
+            // bonusVector2D ();   
+            Vector2D a = new Vector2D (10, 5);
+            Vector2D b = new Vector2D (100, 100);
+            System.Console.WriteLine ("a = {0}, b={1}", a.ToString(), b.ToString());
+
+            Vector2D result = Vector2D.Add (a, b);
+            System.Console.WriteLine ("Add(a,b) = {0}", result.ToString());
+            float distance = Vector2D.Distance (a, b);
+            System.Console.WriteLine ("Distance(a,b) = {0}", distance);
+
         }
 
     }

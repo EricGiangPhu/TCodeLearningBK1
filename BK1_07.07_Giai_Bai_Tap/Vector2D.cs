@@ -9,46 +9,47 @@ namespace BK1_07._07 {
             this.y = y;
         }
 
-        //=====================//
-        // All Method
-        //====================//
-        public void Add (Vector2D other) {
-            this.x += other.X;
-            this.y += other.Y;
-        }
-
-        public void Div (Vector2D other) {
-            this.x /= other.X;
-            this.y /= other.Y;
-        }
-
-        public float Distance (Vector2D other) {
-            double pow2X = Math.Pow (other.X - this.x, 2);
-            double pow2Y = Math.Pow (other.Y - this.y, 2);
-            return (float) Math.Sqrt (pow2X + pow2Y);
-        }
-
-        public void Swap (Vector2D other) {
-            float tempX = this.x;
-            float tempY = this.y;
-
-            this.x = other.X;
-            this.y = other.Y;
-
-            other.X = tempX;
-            other.Y = tempY;
-        }
-
-        public Vector2D Clone () {
-            return new Vector2D (this.x, this.y);
-        }
-
         public override string ToString () {
             return "Vector2D(x: " + this.x + ", y: " + this.y + ")";
         }
 
+        //=====================//
+        // All Static Method
+        //====================//
+        public static Vector2D Add (Vector2D a, Vector2D b) {
+            float x = a.X + b.X;
+            float y = a.Y + b.Y;
+            return new Vector2D (x, y);
+        }
+
+        public static Vector2D Div (Vector2D a, Vector2D b) {
+            float x = a.X / b.X;
+            float y = a.Y / b.Y;
+            return new Vector2D (x, y);
+        }
+
+        public static float Distance (Vector2D a, Vector2D b) {
+            double pow2X = Math.Pow (b.X - a.X, 2);
+            double pow2Y = Math.Pow (b.Y - a.Y, 2);
+            return (float) Math.Sqrt (pow2X + pow2Y);
+        }
+
+        public static void Swap (Vector2D a, Vector2D b) {
+            a.X = a.X + b.X;
+            b.X = a.X - b.X;
+            a.X = a.X - b.X;
+
+            a.Y = a.Y + b.Y;
+            b.Y = a.Y - b.Y;
+            a.Y = a.Y - b.Y;
+        }
+
+        public static Vector2D Clone (Vector2D a) {
+            return new Vector2D (a.X, b.Y);
+        }
+
         //========================//
-        // End All Method
+        // End All Static Method
         //========================//
 
         //========================//

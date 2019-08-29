@@ -1,5 +1,6 @@
 using System;
 namespace BK1_07._07 {
+    
     public class Student {
 
         readonly string id;
@@ -16,7 +17,7 @@ namespace BK1_07._07 {
             this.FirstName = Program.InputString ("Input first name :");;
             this.LastName = Program.InputString ("Input last name :");
             this.Age = Program.InputInt ("Input age :");
-            this.Gender = GetGender ();            
+            this.Gender = GetGender ();
         }
 
         public void WriteInfo () {
@@ -83,7 +84,7 @@ namespace BK1_07._07 {
             }
         }
         public int Age {
-            get {
+            get {                
                 return this.age;
             }
             set {
